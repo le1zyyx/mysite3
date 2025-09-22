@@ -5,7 +5,7 @@
 <div class="list">
   {% for program in programs %}
     <div class="list-item">
-      <h3 style="color:#222;font-weight:bold;margin-bottom:6px;">{{ program.code }} {{ program.name }}</h3>
+      <h3 style="color: #222; font-weight: bold;">{{ program.code }} {{ program.name }}</h3>
       <p>{{ program.description|truncatewords:50 }}</p>
       <div>Координатор: {{ program.coordinator_name }} | {{ program.coordinator_contact }}</div>
     </div>
