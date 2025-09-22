@@ -3,30 +3,12 @@
 {% block content %}
 <h2>Бакалаврські програми</h2>
 <div class="list">
-  <div class="list-item">
-    <h3>113 Прикладна математика</h3>
-    <p>Поглиблене вивчення математики, моделювання, програмування, статистики. <br>
-    Координатор: Олійник Б.В., <b>фі-math@ukma.edu.ua</b></p>
-  </div>
-  <div class="list-item">
-    <h3>121 Інженерія програмного забезпечення</h3>
-    <p>Усе про код, алгоритми та проектування IT-рішень. <br>
-    Координатор: Гороховський С.С., <b>se-software@ukma.edu.ua</b></p>
-  </div>
-  <div class="list-item">
-    <h3>122 Комп’ютерні науки</h3>
-    <p>Архітектури ПК, графіка, розробка ігор, штучний інтелект. <br>
-    Координатор: Гороховський С.С., <b>cs@ukma.edu.ua</b></p>
-  </div>
-  <div class="list-item">
-    <h3>125 Кібербезпека та захист інформації</h3>
-    <p>Захист інформації та мереж, сучасна кібербезпека.<br>
-    Координатор: Бабич Т.А., <b>security@ukma.edu.ua</b></p>
-  </div>
-  <div class="list-item">
-    <h3>174 Автоматизація, комп’ютерно-інтегровані технології та робототехніка</h3>
-    <p>Робототехніка, автоматизація, IoT.<br>
-    Координатор: Волинець Є.А., <b>automation@ukma.edu.ua</b></p>
-  </div>
+  {% for program in programs %}
+    <div class="list-item">
+      <h3 style="color:#222;font-weight:bold;margin-bottom:6px;">{{ program.code }} {{ program.name }}</h3>
+      <p>{{ program.description|truncatewords:50 }}</p>
+      <div>Координатор: {{ program.coordinator_name }} | {{ program.coordinator_contact }}</div>
+    </div>
+  {% endfor %}
 </div>
 {% endblock %}

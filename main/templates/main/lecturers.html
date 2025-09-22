@@ -1,0 +1,12 @@
+{% extends "main/layout.html" %}
+
+{% block content %}
+  <h2>Викладачі факультету</h2>
+  <ul>
+    {% for lec in lecturers %}
+      <li>
+        <b>{{ lec.name }}</b>, {{ lec.position }} ({{ lec.degree }}) — {{ lec.department }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -8,7 +8,7 @@ class Department(models.Model):
 
 class Program(models.Model):
     name = models.CharField(max_length=100, verbose_name="Назва спеціальності", default="не вказано")
-    code = models.CharField(max_length=15, verbose_name="Код спеціальності", default="не вказано")
+    code = models.CharField(max_length=10, verbose_name="Код спеціальності", default="не вказано")
     description = models.TextField(verbose_name="Опис", default="не вказано")
     coordinator_name = models.CharField(max_length=100, verbose_name="Імʼя координатора набору", default="не вказано")
     coordinator_contact = models.CharField(max_length=100, verbose_name="Контакт координатора набору", default="не вказано")

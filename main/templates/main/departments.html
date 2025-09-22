@@ -3,28 +3,19 @@
 {% block content %}
 <h2>Кафедри факультету</h2>
 <div class="list">
-  <div class="list-item">
-    <h3>Кафедра Інформатики</h3>
-    <span>Завідувач: Гороховський Семен Самуїлович, к.ф.-м.н., доцент</span><br>
-    <span>Викладачі: Глибовець М.М., Бабич Т.А., Проценко В.С.</span>
-  </div>
-  <div class="list-item">
-    <h3>Кафедра Математики</h3>
-    <span>Завідувач: Олійник Богдана Віталіївна, д.ф.-м.н., професор</span><br>
-    <span>Викладачі: Волинець Є.А., Вознюк Я.І.</span>
-  </div>
-  <div class="list-item">
-    <h3>Кафедра Мережних технологій</h3>
-    <span>Завідувач: Малашонок Геннадій Іванович, д.ф.-м.н., професор</span>
-  </div>
-  <div class="list-item">
-    <h3>Кафедра Мультимедійних систем</h3>
-    <span>Завідувач: Жежерун О.П., к.ф.-м.н., доцент</span><br>
-    <span>Викладачі: Олецький О.В., Бублик В.В.</span>
-  </div>
-</div>
-<div class="list-item" style="margin-top:20px;">
-  <h3>Лабораторія інформатики</h3>
-  <span>Зав. лабораторії: Вознюк Ярослав Іванович</span>
+  {% for department in departments %}
+    <div class="list-item">
+      <h3 style="color:#222;font-weight:bold;margin-bottom:6px;">{{ department.name }}</h3>
+      <div>Завідувач: {{ department.head }}</div>
+      <div>
+        Спеціальності:
+        {% for program in department.programs.all %}
+          <span>{{ program.name }}</span>
+        {% empty %}
+          <span>Немає спеціальностей</span>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
 </div>
 {% endblock %}
