@@ -18,7 +18,7 @@ def specialties(request):
     programs = Program.objects.all()
     return render(request, 'main/specialties.html', {'programs': programs})
 
-# Додай детальні функції
+
 def department_detail(request, department_id):
     department = get_object_or_404(Department, id=department_id)
     teachers = department.teachers.all() if hasattr(department, 'teachers') else []
