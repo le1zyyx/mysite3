@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'main/index.html', {'department': department, 'contacts': contacts})
 
 def departments(request):
-    departments = Department.objects.all()  # Отримай всі кафедри
+    departments = Department.objects.all() 
     return render(request, 'main/departments.html', {'departments': departments})
 
 def specialties(request):
