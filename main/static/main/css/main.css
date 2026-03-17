@@ -82,9 +82,3 @@ footer {
 footer .contacts a {color:#3869f2;}
 a.more { display:inline-block; margin-top:9px; font-size:.96em; color:#4961e4;}
 a.more:hover {text-decoration:underline;}
-@media (max-width:700px){
-  .cards, .list {flex-direction:column;}
-  nav, .hero, .cards {max-width:100%;padding:0 10px;}
-  .faculty-info {padding:12px;}
-  .list {gap:10px;}
-}
